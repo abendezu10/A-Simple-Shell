@@ -1,3 +1,0 @@
-/Users/alexbendezu/Documents/C Programming/Projects/A Simple Shell/cmake-build-debug/CMakeFiles/A_Simple_Shell.dir
-/Users/alexbendezu/Documents/C Programming/Projects/A Simple Shell/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/alexbendezu/Documents/C Programming/Projects/A Simple Shell/cmake-build-debug/CMakeFiles/rebuild_cache.dir
