@@ -1,1 +1,1 @@
-# A-Simple-Shell
+# Terminal Emulator
