@@ -1,24 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-struct Directory{
-
-	char name[100];
-	struct Directory directories[100];
-	
-
-};
-
-
-
-void ls();
-void mkdir(char name[]); 
+#include "commands.h"
 
 	int main(){
 		
 		int exit = 0;
 		char *command = (char*)malloc(100 * (sizeof(char)));
+		
+		// Creates root directory
+		Directory *root = (Directory*)malloc((sizeof(Directory));
+		strcpy(root->name, "abendezu");
 		int i,j;
 		
 
@@ -78,17 +70,3 @@ void mkdir(char name[]);
 		return 0;
 	}
 
-
-
-void ls(){
-
-	}
-
-
-void mkdir(char name[]){
-	struct Directory *dir = (struct Directory*)malloc(sizeof(Directory));
-
-	strcpy(dir->name, name);
-	
-
-}
