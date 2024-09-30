@@ -1,16 +1,15 @@
+#include <string.h>
+#include <stdlib.h>
 #include "commands.h"
 
 
 
-void ls(){
+void ls(Directory *dir){
 
         }
 
 
-void mkdir(char name[]){
-        Directory *dir = (struct Directory*)malloc(sizeof(Directory));
-
-        strcpy(dir->name, name);
+void mkdir(Directory *dir, char name[]){
 
 
 }

@@ -4,14 +4,14 @@
 typedef struct Directory{
 
         char name[100];
-        struct Directory *directories;
+        struct Directory **subdirectories;
 
 } Directory;
 
 
-void ls();
+void ls(Directory* dir);
 
-void mkdir(char name[]);
+void mkdir(Directory *dir, char name[]);
 
 
 #endif 
