@@ -1,5 +1,5 @@
-#ifndef COMMANDS_H
-#define COMMANDS_H
+#ifndef MKDIR_H
+#define MKDIR_H
 
 typedef struct Directory{
 
@@ -8,10 +8,7 @@ typedef struct Directory{
 
 } Directory;
 
-
-void ls(Directory* dir);
-
 void mkdir(Directory *dir, char name[]);
 
 
-#endif 
+#endif

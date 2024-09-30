@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "commands.h"
+#include "mkdir.h"
+#include "ls.h"
 
 	int main(){
 		
@@ -23,7 +24,6 @@
 			printf("abendezu$ %s", cur_dir->name);
 			command = fgets(command, 100, stdin);
 			*(command + strlen(command) - 1) = '\0';
-
 			char *exec = (char*)calloc(i+2,sizeof(char));
 			char *opt = (char*)malloc(100*sizeof(char));
 	
@@ -54,20 +54,21 @@
 				i++;
 			}	
 			
-// we have to create a root folder then we can add folders
-// list all directories
-				if(strcmp(exec,"ls") == 0){
+
+				if(strcmp(command,"ls") == 0){
 
 					ls(cur_dir);
-					break;
+					continue;
 
 				} else if(strcmp(exec, "mkdir") == 0){
-
+					
 					mkdir(cur_dir, opt);
-					break;
+					continue;
 				} 
 
+
 				 if(strcmp(command, "exit") == 0){
+
 					exit = 1;
 				}
 
