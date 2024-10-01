@@ -12,6 +12,7 @@
 		// Creates root directory
 		Directory *root = (Directory*)malloc((sizeof(Directory)));
 		strcpy(root->name, "~ ");
+		root->parentdirectories = NULL;
 		int i,j;
 
 		Directory *cur_dir = root;
