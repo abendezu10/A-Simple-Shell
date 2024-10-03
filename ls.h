@@ -5,6 +5,7 @@
 
 
 
-void ls(Directory *dir);
+void ls(Directory *parent_directory);
+
 
 #endif

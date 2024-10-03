@@ -6,8 +6,8 @@
 typedef struct Directory{
 
   char name[MAX_NAME_LENGTH];
-  struct Directory **subdirectories = NULL; // Pointer to an Array of Pointers to directories
-	struct Directory *parentdirectory;
+  struct Directory **subdirectories; // Pointer to an Array of Pointers to directories
+  struct Directory *parentdirectory;
   int num_subdirectories    ;
 	
 } Directory;

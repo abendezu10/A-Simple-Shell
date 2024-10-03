@@ -13,20 +13,20 @@ int main(){
 	
 	// Creates root directory
 	Directory *root = (Directory*)malloc((sizeof(Directory)));
-  root->num_subdirectories = 0;
+        root->num_subdirectories = 0;
 
 	strcpy(root->name, "~ ");
-	root->parentdirectories = NULL;
+	root->parentdirectory = NULL;
 	int i,j;
 
-	Directory *cur_dir = root;
+	Directory *current_dir = root;
 		
 
 	while(exit != 1){
 		i = 0;
 		j = 0;
 
-		printf("abendezu$ %s", cur_dir->name);
+		printf("abendezu$ %s", current_dir->name);
 		command = fgets(command, 100, stdin);
 		*(command + strlen(command) - 1) = '\0';
 		char *exec = (char*)calloc(i+2,sizeof(char));
@@ -54,18 +54,18 @@ int main(){
 			}
 				
 			i++;
-		}	
+		}
 			
-
+			
 			if(strcmp(command,"ls") == 0){
-
-				ls(cur_dir);
+				ls(current_dir);
 				continue;
 
 			} else if(strcmp(exec, "mkdir") == 0){
-					
-				mkdir(cur_dir, opt);
+				printf("exec: %s, options: %s", exec, opt);
+				mkdir(current_dir, opt);
 				continue;
+
 			} 
 
 			 if(strcmp(command, "exit") == 0){
