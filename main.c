@@ -13,6 +13,8 @@ int main(){
 	
 	// Creates root directory
 	Directory *root = (Directory*)malloc((sizeof(Directory)));
+  root->num_subdirectories = 0;
+
 	strcpy(root->name, "~ ");
 	root->parentdirectories = NULL;
 	int i,j;
