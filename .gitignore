@@ -1,0 +1,15 @@
+# Ignore IDE files
+.idea/
+.vscode/
+.DS_Store
+
+# Ignore compiled files
+*.o
+executable
+
+# Ignore backup files and temporary files
+*~
+*.bak
+*.swp
+*.log
+
