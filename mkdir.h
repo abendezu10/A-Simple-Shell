@@ -13,12 +13,12 @@ typedef struct Directory{
 } Directory;
 
 
-void mkdir(Directory *parent, char name[]);
+void mkdir(Directory *parent_directory, char name[]);
 
-Directory *create_directory(const char name[], Directory *parent);
+Directory *create_directory(Directory *parent_directory, const char name[]);
 
 
-//void addSubDirectory(Directory *cur_dir, 
-
+void add_subdirectory(Directory *parent_directory, Directory *sub_directory);
+  
 
 #endif
