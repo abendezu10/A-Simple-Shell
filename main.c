@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "mkdir.h"
 #include "ls.h"
-
+#include "parse.h"
 
 int main(){		
 	
@@ -13,7 +13,7 @@ int main(){
 	
 	// Creates root directory
 	Directory *root = (Directory*)malloc((sizeof(Directory)));
-        root->num_subdirectories = 0;
+  root->num_subdirectories = 0;
 
 	strcpy(root->name, "~ ");
 	root->parentdirectory = NULL;
@@ -29,52 +29,29 @@ int main(){
 		printf("abendezu$ %s", current_dir->name);
 		command = fgets(command, 100, stdin);
 		*(command + strlen(command) - 1) = '\0';
-		char *exec = (char*)calloc(i+2,sizeof(char));
+		char *exec = (char*)calloc(100,sizeof(char));
 		char *opt = (char*)malloc(100*sizeof(char));
 	
+    parse_command(command, exec, opt);
 			
-		while(*(command+i) != '\0'){				
-			if(*(command+i) == ' '){
+		if(strcmp(command,"ls") == 0){
 
-				while(j != i){
-					*(exec + j) = *(command+j);
-					j++;
-					
-	
-			}
-					*(exec+j+1) = '\0';
-					i++;
-				while(*(command + i) != '\0'){
-					*(opt+i) = *(command+i);
-					i++;	
-				}
+			ls(current_dir);
+			continue;
+		} else if(strcmp(exec, "mkdir") == 0){ 
 
-				*(opt+i+1) = '\0';
-				break;
-			}
-				
-			i++;
+			mkdir(current_dir, opt);
+			continue;
+		} 
+
+	  if(strcmp(command, "exit") == 0){
+
+			exit = 1;
 		}
-			
-			
-			if(strcmp(command,"ls") == 0){
-				ls(current_dir);
-				continue;
-
-			} else if(strcmp(exec, "mkdir") == 0){
-				printf("exec: %s, options: %s", exec, opt);
-				mkdir(current_dir, opt);
-				continue;
-
-			} 
-
-			 if(strcmp(command, "exit") == 0){
-				exit = 1;
-			}
 
 		free(exec);
 			
-		}
+	}
 
 	free(command);
 	
